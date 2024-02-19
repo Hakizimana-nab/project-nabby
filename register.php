@@ -1,22 +1,21 @@
 <?php
-    include('connection.php');
-    if(isset($_POST['submit'])){
-        //[G]etting data
-        $name  = $_POST['name'];
-        $email = $_POST['email'];
-        $password = sha1($_POST['password']);
-        $gender   = $_POST['gender'];
+if(isset($_POST(['submit']))){
+$_name    = $_POST['name'];
+$_email   = $_POST['email'];
+$_password = sha1($_password['password']);
+$_country  = $_POST['country'];
+$_message =$_POST['message'];
 
-        //[Cheching] filelds
-        if(!empty($name) && !empty($email) && !empty($password) && !empty($gender)){
-        $query = mysqli_query($conn, "INSERT INTO `user_tb`(`name`, `email`, `password`, `gender`) VALUES ('$name','$email','$password','$gender')");
-        if($query){
-            echo "Data added";
-        } else {
-            echo "Failed to add data.";
-        }
-    }
+// to check file using query
+if(!empty($name) && !empty($email) && !empty($password) && !empty($_country)){
+    $query = mysqli_query($conn, "INSERT INTO `shop`(`name`, `email`, `password`, `country`,``) VALUES ('$name','$email','$password','$country','$message')");
+    if($query){
+        echo "Data added";
     } else {
-        echo "all are required";
+        echo "Failed to add data.";
     }
+}
+} else {
+    echo "all are required";
+}
 ?>

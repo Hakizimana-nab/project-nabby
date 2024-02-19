@@ -1,3 +1,5 @@
-<?php
-  $conn = mysqli_connect('localhost','root','','managing');
+<?php 
+$conn = mysqli_connect("localhost","root","","managing");
+
+
 ?>
